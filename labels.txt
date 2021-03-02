@@ -1,0 +1,6 @@
+0 Raspberry Pi
+1 NVidia Jetson Nano
+2 Arduino
+3 Sensor de Luz
+4 LED
+5 ESP8266 WiFi

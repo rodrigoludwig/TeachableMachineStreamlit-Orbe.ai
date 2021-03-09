@@ -6,14 +6,11 @@ from PIL import Image, ImageOps
 import numpy as np
 # import TeachableMachinePrediction
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
+    # monta tela inicial com logo
     image = Image.open('fliptec.jpg')   # abre imagem com logo
     st.image(image)                     # mostra imagem
 

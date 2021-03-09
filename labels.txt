@@ -4,3 +4,6 @@
 3 Sensor de Luz
 4 LED
 5 ESP8266 WiFi
+6 Potenciômetro
+7 Capacitor
+8 Sensor de Chuva

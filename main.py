@@ -1,12 +1,13 @@
-# This is a sample Python script.
+# imports
+
 import streamlit as st
 import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
+# import TeachableMachinePrediction
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
 
 
 
@@ -17,26 +18,26 @@ if __name__ == '__main__':
     st.image(image)                     # mostra imagem
 
     # mostra texto
-    st.write("<h3>Arraste uma imagem no <font color='#27d5e2'>BOX abaixo</font>, para detectar um padrão.</h3>",unsafe_allow_html = True)
+    st.write("<h3>Arraste uma imagem no <font color='#27d5e2'>BOX abaixo</font>, para indentificar o componente.</h3>",unsafe_allow_html = True)
 
-    # mostra input de arquivo
+    # mostra input de upload de arquivos
     uploaded_file = st.file_uploader("")
 
     # se algum arquivo for arrastado ou aberto
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-
-        # Disable scientific notation for clarity
-        np.set_printoptions(suppress=True)
+        #width, height (image.size)
 
         # Load the model
         model = tensorflow.keras.models.load_model('keras_model.h5')
+
+        # Disable scientific notation for clarity
+        np.set_printoptions(suppress=True)
 
         # Create the array of the right shape to feed into the keras model
         # The 'length' or number of images you can put into the array is
         # determined by the first position in the shape tuple, in this case 1.
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-
 
         #resize the image to a 224x224 with the same strategy as in TM2:
         #resizing the image to be at least 224x224 and then cropping from the center
